@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+	<h1>REGISTRATION FORM </h1>
+	<!-- we use *  to POST data and  $ to GET data i.e. *{varName} & i${varName}  -->
+	<form action="#" th:action="@{/registration}" th:object="${user}"
+		th:method="post">
+		
+		<p>
+			User Name : <input type="text" th:field="*{userName}" />
+		</p>
+		<p>
+			Password : <input type="text" th:field="*{password}" />
+		</p>
+		<div th:object="${userdetails}">
+		<p>
+			First Name : <input type="text" th:field="*{firstName}" />
+		</p>
+		<p>
+			Last Name : <input type="text" th:field="*{lastName}" />
+		</p>
+		<p>
+			Enter Age : <input type="text" th:field="*{age}" />
+		</p>
+		</div>
+		<p>
+			<input type="submit" value="Submit" />
+		</p>
+	</form>
+	
+    <a href="/index">BACK TO HOME </a>
+	</div>
+	<!--  <p th:text="${userData}"/>-->
+
+</body>
+</html>

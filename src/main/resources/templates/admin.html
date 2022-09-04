@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Registration and Login System</title>
+</head>
+<body>
+<div align="center">
+	<h1><p>ADMIN LOGIN PAGE</p></h1>
+	
+	<!-- we use *  to POST data and  $ to GET data i.e. *{varName} & i${varName}  -->
+	<form action="#" th:action="@{/adminlogin}" th:object="${user}"
+		method="post">
+
+
+		<h3><p>
+			User Name : <input type="text" th:field="*{userName}" />
+		</p></h3>
+		<h3><p>
+			Password : <input type="password" th:field="*{password}" />
+		</p></h3>
+		<h3><p>
+			<input type="submit" value="Submit" />
+		</p></h3>
+	</form>
+
+	</div>
+
+</body>
+</html>

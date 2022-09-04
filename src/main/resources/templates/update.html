@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Profile Update</title>
+
+
+</head>
+<body>
+<p>Update User Profile</p>
+<form action="#" th:action="@{/updateprofile}" th:object="${user}"
+	th:method="put">
+		<p>
+			User Id : <input type="text" th:field="*{userId}" />
+		</p>
+		<p>
+			User Name : <input type="text" th:field="*{userName}" />
+		</p>
+		<p>
+			Password : <input type="text" th:field="*{password}" />
+		</p>
+		<div th:object="${userdetails}">
+		<p>
+			First Name : <input type="text" th:field="*{firstName}" />
+		</p>
+		<p>
+			Last Name : <input type="text" th:field="*{lastName}" />
+		</p>
+		<p>
+			Email : <input type="number" th:field="*{age}" />
+		</p>
+		</div>
+		<p>
+			<input type="submit" value="Submit" />
+		</p>
+	</form>
+	
+	<p th:text="${userData}"/>
+	
+	<p><a th:href="@{/home}">Logout</a></p>
+	
+
+
+
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Login page</h1>
+
+		<!-- we use *  to POST data and  $ to GET data i.e. *{varName} & i${varName}  -->
+		<form action="#" th:action="@{/login}" th:object="${user}"
+			th:method="post">
+			<div>
+				<br>
+				<h3>
+					<label>Username</label>&nbsp;&nbsp;&nbsp; <input type="text"
+						id="userName" name="userName">
+				</h3>
+			</div>
+			<div>
+				<h3>
+					<label>Password</label>&nbsp;&nbsp;&nbsp; <input type="password"
+						id="password" name="password">
+				</h3>
+			</div>
+			<br> <input type="submit">
+		</form>
+		<br>
+		<h2>
+			<a href="/registration">Sign-Up?</a>
+		</h2>
+
+
+	</div>
+</body>
+</html>
