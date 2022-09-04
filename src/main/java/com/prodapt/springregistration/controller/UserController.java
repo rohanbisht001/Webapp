@@ -26,7 +26,7 @@ public class UserController {
 		return "index";
 	}
 
-	@PostMapping("/registration")
+	@PostMapping("/saveuser")
 	public ModelAndView save(@ModelAttribute("user") User user,
 			@ModelAttribute("userdetails") UserDetails userDetails) {
 		user.setUserDetails(userDetails);
@@ -62,7 +62,7 @@ public class UserController {
 		return mv;
 	}
 	
-	@GetMapping("/updateprofile")
+	@GetMapping("/update")
 	public String update(@ModelAttribute("user") User user, @ModelAttribute("userdetails") UserDetails userdetails) {
 		return "update";
 	}

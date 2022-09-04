@@ -24,12 +24,17 @@ public class AdminController {
 	private UserDetailsService userDetailsService;
 
 	@PostMapping("/adminlogin")
-	public ModelAndView loginAdmin(@ModelAttribute("user") User user) throws InvalidCredentialsException {
+	public ModelAndView loginAdmin(@ModelAttribute("user") User user) {
 		User usr;
 		ModelAndView mv = new ModelAndView();
-		usr = userService.loginUser(user);
-		mv.addObject("userData", usr);
-		mv.setViewName("adminlogged");
+		try {
+			usr = userService.loginUser(user);
+			mv.addObject("userData", usr);
+			mv.setViewName("adminprofile");
+		} catch (InvalidCredentialsException e) {
+			mv.addObject("errormssg", "Username or Password incorrect");
+			mv.setViewName("admin");
+		}
 
 		return mv;
 	}

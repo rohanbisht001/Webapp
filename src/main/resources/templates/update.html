@@ -7,10 +7,10 @@
 
 </head>
 <body>
-<p>Update User Profile</p>
+<div align="center"><h2><p>Update User Profile</p></h2>
 <form action="#" th:action="@{/updateprofile}" th:object="${user}"
 	th:method="put">
-		<p>
+	<h3>	<p>
 			User Id : <input type="text" th:field="*{userId}" />
 		</p>
 		<p>
@@ -27,17 +27,17 @@
 			Last Name : <input type="text" th:field="*{lastName}" />
 		</p>
 		<p>
-			Email : <input type="number" th:field="*{age}" />
+			Age : <input type="number" th:field="*{age}" />
 		</p>
 		</div>
 		<p>
 			<input type="submit" value="Submit" />
-		</p>
+		</p></h3>
 	</form>
-	
+	</div>
 	<p th:text="${userData}"/>
 	
-	<p><a th:href="@{/home}">Logout</a></p>
+<h2><p><a th:href="@{/index}">Logout</a></p></h2>	
 	
 
 
