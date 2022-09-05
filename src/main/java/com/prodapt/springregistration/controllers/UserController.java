@@ -1,4 +1,4 @@
-package com.prodapt.springregistration.controller;
+package com.prodapt.springregistration.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,9 +35,9 @@ public class UserController {
 		mv.setViewName("registration");
 		return mv;
 	}
+
 	@GetMapping("/registration")
-	public String showForm(@ModelAttribute("user") User user,
-			@ModelAttribute("userdetails") UserDetails userdetails) {
+	public String showForm(@ModelAttribute("user") User user, @ModelAttribute("userdetails") UserDetails userdetails) {
 		return "registration";
 	}
 
@@ -45,7 +45,7 @@ public class UserController {
 	public String showLoginForm(@ModelAttribute("user") User user) {
 		return "login";
 	}
-	
+
 	@RequestMapping("/login")
 	public ModelAndView loginUser(@ModelAttribute("user") User user) {
 		User usr;
@@ -61,7 +61,7 @@ public class UserController {
 
 		return mv;
 	}
-	
+
 	@GetMapping("/update")
 	public String update(@ModelAttribute("user") User user, @ModelAttribute("userdetails") UserDetails userdetails) {
 		return "update";
@@ -71,13 +71,11 @@ public class UserController {
 	public ModelAndView updateUser(@ModelAttribute("user") User user,
 			@ModelAttribute("userdetails") UserDetails userdetails) {
 		user.setUserDetails(userdetails);
-		
 		User userData = userService.updateUser(user);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("update");
 		mv.addObject("updatedData", userData);
 		return mv;
 	}
-
 
 }

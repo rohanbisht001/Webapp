@@ -5,17 +5,20 @@ import java.util.List;
 import com.prodapt.springregistration.entities.UserDetails;
 
 public interface UserDetailsService {
-	//Create
+
+	// Create
 	public UserDetails addUser(UserDetails userDetails);
-	//Retrieve
+
+	// Retrieve
 	public UserDetails getUserById(Long id);
-	
-	//Update
+
+	// Update
 	public UserDetails updateUser(UserDetails userDetails);
-	
-	//Delete
+
+	// Delete
 	public void deleteUserById(Long id);
-	//retrieve by list 
-	public List<UserDetails> getList();
+
+	// retrieve by list
+	public List<UserDetails> listAll();
 
 }

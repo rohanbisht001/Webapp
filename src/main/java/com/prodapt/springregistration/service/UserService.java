@@ -13,7 +13,7 @@ import com.prodapt.springregistration.repositories.UserRepository;
 @Service
 @Transactional
 public class UserService {
-	@Autowired(required = false)
+	@Autowired
 	private UserRepository repo;
 
 	public User save(User user) {
@@ -28,7 +28,6 @@ public class UserService {
 		return repo.findById(id).get();
 	}
 
-
 	public User loginUser(User user) throws InvalidCredentialsException {
 		User usr = repo.findByUserName(user.getUserName());
 		if (usr != null) {
@@ -42,17 +41,32 @@ public class UserService {
 		}
 	}
 
-	public void deleteUserById(Long userId) {
-		repo.deleteById(userId);
-	}
-
 	public User updateUser(User user) {
-		if(repo.existsById(user.getUserId())) {
+		if (repo.existsById(user.getUserId())) {
 			repo.save(user);
 		}
 		return user;
 	}
 
+	public void delete(long userId) {
+		repo.deleteById(userId);
 
+	}
+
+	public List<User> search(String keyword) {
+		return repo.search(keyword);
+	}
+
+	public User editUser(User user) {
+		if (repo.existsById(user.getUserId())) {
+			repo.save(user);
+		}
+		return user;
+	}
+
+	public void deleteUserById(Long userId) {
+		repo.deleteById(userId);
+
+	}
 
 }

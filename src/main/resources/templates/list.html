@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+<div align="center">
+	<h2>Administrator Controller</h2>
+	<form method="get" action="search">
+		<input type="text" name="keyword" /> &nbsp; <input type="submit"
+			value="Search" />
+	</form>
+	<h3>
+		<a href="/adduser">Add User</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="/delete">Delete User</a>
+	</h3>
+	<table border="1" cellpadding="5">
+		<tr>
+			<th>UserId</th>
+			<th>FirstName</th>
+			<th>LastName</th>
+			<th>Age</th>
+			<th>Action</th>
+		</tr>
+		<tr th:object="${userdetails}" th:each="user : ${listOfUsers}">
+			
+				<td th:text="${user.userId}"/>
+				<td th:text="${user.firstName}"/>
+				<td th:text="${user.lastName}"></td>
+				<td th:text="${user.age}"></td>
+				<td><a href="/edit">Edit</a>
+					&nbsp;&nbsp; </td>
+			</tr>
+	
+	</table>
+</div>
+</html>

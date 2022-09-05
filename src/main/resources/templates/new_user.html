@@ -1,14 +1,15 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Add New User</title>
 </head>
 <body>
-<div align="center">
-	<h1>REGISTRATION FORM </h1>
-	<!-- we use *  to POST data and  $ to GET data i.e. *{varName} & i${varName}  -->
-	<form action="#" th:action="@{/saveuser}" th:object="${user}"
+	<div align="center">
+		<h2>Add New User</h2>
+		<!-- we use *  to POST data and  $ to GET data i.e. *{varName} & i${varName}  -->
+	<form action="#" th:action="@{/newuser}" th:object="${user}"
 		th:method="post">
 		
 		<p>
@@ -33,8 +34,7 @@
 		</p>
 	</form>
 	
-    <a href="/index">BACK TO HOME </a>
+    <a href="/list">BACK TO Admin Page </a>
 	</div>
-
 </body>
 </html>
